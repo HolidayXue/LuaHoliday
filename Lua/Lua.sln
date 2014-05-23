@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaScriptVM", "LuaScriptVM\LuaScriptVM.vcxproj", "{738D1E73-A0DA-4534-9545-664DB5CB77B1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaRun", "LuaRun\LuaRun.vcxproj", "{1B5723EA-5ECA-49D1-A9DF-E7AD631A45D1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaObjectRegister", "LuaObjectRegister\LuaObjectRegister.vcxproj", "{9432C633-AB9C-4F79-AC32-E7FC5FD1FE29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{738D1E73-A0DA-4534-9545-664DB5CB77B1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{738D1E73-A0DA-4534-9545-664DB5CB77B1}.Debug|Win32.Build.0 = Debug|Win32
+		{738D1E73-A0DA-4534-9545-664DB5CB77B1}.Release|Win32.ActiveCfg = Release|Win32
+		{738D1E73-A0DA-4534-9545-664DB5CB77B1}.Release|Win32.Build.0 = Release|Win32
+		{1B5723EA-5ECA-49D1-A9DF-E7AD631A45D1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1B5723EA-5ECA-49D1-A9DF-E7AD631A45D1}.Debug|Win32.Build.0 = Debug|Win32
+		{1B5723EA-5ECA-49D1-A9DF-E7AD631A45D1}.Release|Win32.ActiveCfg = Release|Win32
+		{1B5723EA-5ECA-49D1-A9DF-E7AD631A45D1}.Release|Win32.Build.0 = Release|Win32
+		{9432C633-AB9C-4F79-AC32-E7FC5FD1FE29}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9432C633-AB9C-4F79-AC32-E7FC5FD1FE29}.Debug|Win32.Build.0 = Debug|Win32
+		{9432C633-AB9C-4F79-AC32-E7FC5FD1FE29}.Release|Win32.ActiveCfg = Release|Win32
+		{9432C633-AB9C-4F79-AC32-E7FC5FD1FE29}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
