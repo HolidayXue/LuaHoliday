@@ -1,0 +1,5 @@
+testRequireHoliday = {}
+function testRequireHoliday.print()
+	G_TestObject1:print("I'm G_TestObject1 test holiday file.\n ");
+end
+return testRequireHoliday;
