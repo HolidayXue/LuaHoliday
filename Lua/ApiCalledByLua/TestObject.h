@@ -1,8 +1,16 @@
 #pragma once
 #include <stdlib.h>
 #include "delegate.h"
+#ifdef APICALLEDBYLUA_API_EXPORT
+#define APICALLEDBYLUA_API __declspec(dllexport)
+#else
+#define APICALLEDBYLUA_API __declspec(dllimport)
+#endif // 
+
+
+
 // tolua_begin
-class TestObject
+class APICALLEDBYLUA_API TestObject
 {
 public:
     TestObject(void);

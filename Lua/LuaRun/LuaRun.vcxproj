@@ -72,7 +72,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)/LuaScriptVM;$(SolutionDir)/LuaObjectRegister;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/LuaScriptVM;$(SolutionDir)/LuaObjectRegister;$(SolutionDir)/ApiCalledByLua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader />
@@ -80,7 +80,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>LuaScriptVM.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>LuaScriptVM.lib;ApiCalledByLua.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(SolutionDir)/$(Configuration)/$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -92,14 +92,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="TestObject.cpp" />
-    <ClCompile Include="TestObjectBind.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="delegate.h" />
-    <ClInclude Include="delegate_imp.h" />
-    <ClInclude Include="TestObject.h" />
-    <ClInclude Include="TestObjectBind.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

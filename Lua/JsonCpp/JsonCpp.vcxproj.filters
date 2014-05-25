@@ -56,6 +56,7 @@
     <None Include="json_valueiterator.inl">
       <Filter>头文件</Filter>
     </None>
+    <None Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="json_reader.cpp">

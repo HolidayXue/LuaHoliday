@@ -246,6 +246,5 @@ void strbuf_append_fmt_retry(strbuf_t *s, const char *fmt, ...)
 
     s->length += fmt_len;
 }
-
 /* vi:ai et sw=4 ts=4:
  */

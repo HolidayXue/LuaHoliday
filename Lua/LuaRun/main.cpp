@@ -3,8 +3,8 @@
 #include <string>
 #include <LuaRunner.h>
 #include <TemplateObjectRegister.h>
-#include "TestObjectBind.h"
-#include "TestObject.h"
+#include <TestObjectBind.h>
+#include <TestObject.h>
 
 
 using namespace std;

@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JsonCpp", "JsonCpp\JsonCpp.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CJson", "CJson\CJson.vcxproj", "{F10A4A39-0790-4B6F-9534-A0B851D5C41E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ApiCalledByLua", "ApiCalledByLua\ApiCalledByLua.vcxproj", "{879BF344-141F-4BD5-AC06-91A5751D8CB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -41,6 +43,12 @@ Global
 		{F10A4A39-0790-4B6F-9534-A0B851D5C41E}.Release|Win32.ActiveCfg = Release|Win32
 		{F10A4A39-0790-4B6F-9534-A0B851D5C41E}.Release|Win32.Build.0 = Release|Win32
 		{F10A4A39-0790-4B6F-9534-A0B851D5C41E}.Release|Win32.Deploy.0 = Release|Win32
+		{879BF344-141F-4BD5-AC06-91A5751D8CB0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{879BF344-141F-4BD5-AC06-91A5751D8CB0}.Debug|Win32.Build.0 = Debug|Win32
+		{879BF344-141F-4BD5-AC06-91A5751D8CB0}.Debug|Win32.Deploy.0 = Debug|Win32
+		{879BF344-141F-4BD5-AC06-91A5751D8CB0}.Release|Win32.ActiveCfg = Release|Win32
+		{879BF344-141F-4BD5-AC06-91A5751D8CB0}.Release|Win32.Build.0 = Release|Win32
+		{879BF344-141F-4BD5-AC06-91A5751D8CB0}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
