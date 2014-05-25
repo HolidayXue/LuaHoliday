@@ -136,13 +136,13 @@ TOLUA_API void tolua_dobuffer(lua_State* L, char* B, unsigned int size, const ch
 TOLUA_API int class_gc_event (lua_State* L);
 
 #ifdef __cplusplus
-static inline const char* tolua_tocppstring (lua_State* L, int narg, const char* def) {
+static  const char* tolua_tocppstring (lua_State* L, int narg, const char* def) {
 
 	const char* s = tolua_tostring(L, narg, def);
 	return s?s:"";
 };
 
-static inline const char* tolua_tofieldcppstring (lua_State* L, int lo, int index, const char* def) {
+static  const char* tolua_tofieldcppstring (lua_State* L, int lo, int index, const char* def) {
 
 	const char* s = tolua_tofieldstring(L, lo, index, def);
 	return s?s:"";

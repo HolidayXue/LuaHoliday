@@ -7,6 +7,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaRun", "LuaRun\LuaRun.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaObjectRegister", "LuaObjectRegister\LuaObjectRegister.vcxproj", "{9432C633-AB9C-4F79-AC32-E7FC5FD1FE29}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JsonCpp", "JsonCpp\JsonCpp.vcxproj", "{BECE1F84-9CB8-4006-BC18-6941F670A443}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CJson", "CJson\CJson.vcxproj", "{F10A4A39-0790-4B6F-9534-A0B851D5C41E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -25,6 +29,18 @@ Global
 		{9432C633-AB9C-4F79-AC32-E7FC5FD1FE29}.Debug|Win32.Build.0 = Debug|Win32
 		{9432C633-AB9C-4F79-AC32-E7FC5FD1FE29}.Release|Win32.ActiveCfg = Release|Win32
 		{9432C633-AB9C-4F79-AC32-E7FC5FD1FE29}.Release|Win32.Build.0 = Release|Win32
+		{BECE1F84-9CB8-4006-BC18-6941F670A443}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BECE1F84-9CB8-4006-BC18-6941F670A443}.Debug|Win32.Build.0 = Debug|Win32
+		{BECE1F84-9CB8-4006-BC18-6941F670A443}.Debug|Win32.Deploy.0 = Debug|Win32
+		{BECE1F84-9CB8-4006-BC18-6941F670A443}.Release|Win32.ActiveCfg = Release|Win32
+		{BECE1F84-9CB8-4006-BC18-6941F670A443}.Release|Win32.Build.0 = Release|Win32
+		{BECE1F84-9CB8-4006-BC18-6941F670A443}.Release|Win32.Deploy.0 = Release|Win32
+		{F10A4A39-0790-4B6F-9534-A0B851D5C41E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F10A4A39-0790-4B6F-9534-A0B851D5C41E}.Debug|Win32.Build.0 = Debug|Win32
+		{F10A4A39-0790-4B6F-9534-A0B851D5C41E}.Debug|Win32.Deploy.0 = Debug|Win32
+		{F10A4A39-0790-4B6F-9534-A0B851D5C41E}.Release|Win32.ActiveCfg = Release|Win32
+		{F10A4A39-0790-4B6F-9534-A0B851D5C41E}.Release|Win32.Build.0 = Release|Win32
+		{F10A4A39-0790-4B6F-9534-A0B851D5C41E}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
