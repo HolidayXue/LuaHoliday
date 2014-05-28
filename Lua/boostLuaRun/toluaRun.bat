@@ -1,0 +1,1 @@
+toluapp.exe -o AsCInterFaceBind.cpp AsCInterFace.pkg

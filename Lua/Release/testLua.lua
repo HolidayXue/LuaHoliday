@@ -23,10 +23,11 @@ function test_call_first(str_input)
 	table_json_input["param"]["name"] = "HolidayXue";
 	local str_output = json.encode(table_json_input);
 	G_TestObject1:print(str_output);
+	G_AsCInterFace1:test_calledFunction(str_output);
 end
 
 function test_call_second(str_input)
 	print(str_input);
 	local table_jsonout = json.decode(str_input);
-	print(table_jsonout["key"])
+	print(table_jsonout["param"]["name"])
 end

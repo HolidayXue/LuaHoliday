@@ -24,12 +24,24 @@
     <ClCompile Include="LuaAsMessageQueue.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="AsCInterFace.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AsCInterFaceBind.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventCome.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="LuaAsMessageQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AsCInterFace.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AsCInterFaceBind.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

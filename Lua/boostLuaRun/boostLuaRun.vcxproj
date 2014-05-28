@@ -84,11 +84,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AsCInterFace.cpp" />
+    <ClCompile Include="AsCInterFaceBind.cpp" />
     <ClCompile Include="EventCome.cpp" />
     <ClCompile Include="LuaAsMessageQueue.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AsCInterFace.h" />
+    <ClInclude Include="AsCInterFaceBind.h" />
     <ClInclude Include="EventCome.h" />
     <ClInclude Include="LuaAsMessageQueue.h" />
   </ItemGroup>
