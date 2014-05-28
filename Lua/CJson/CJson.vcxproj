@@ -70,7 +70,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;cjson_EXPORTS;USE_INTERNAL_ISINF;DISABLE_INVALID_NUMBERS;LUA_BUILD_AS_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;cjson_EXPORTS;USE_INTERNAL_ISINF;DISABLE_INVALID_NUMBERS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)/LuaScriptVM</AdditionalIncludeDirectories>
     </ClCompile>
@@ -81,7 +81,6 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>LuaScriptVM.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)cjson.dll</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

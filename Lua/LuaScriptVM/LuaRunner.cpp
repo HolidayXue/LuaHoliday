@@ -147,22 +147,4 @@ void CLuaRunner::Close()
     lua_close(m_pLuaState);
 }
 
-int CLuaRunner::CallLuaFunction( const std::string &function_name,const std::string input_JsonString )
-{
-	if (NULL == m_pLuaState)
-	{
-		return 1;
-	}
-	lua_getglobal(m_pLuaState,function_name.c_str());
-	//lua_pushvfstring()
-	lua_pushstring(m_pLuaState,input_JsonString.c_str()) ;  
-	
-	int ret = lua_pcall(m_pLuaState,1,LUA_MULTRET,0) ;  
-	if ( ret != 0 )  
-		return ret;
-	//lua_pop(m_pLuaState,1);
-	return 0;
-}
-
-  
 
