@@ -32,7 +32,7 @@ int CustomLoadLuaScript( char *input_buffer,int input_buffer_size, char** output
     memset(*output_buffer_address,0,new_length);
 
 
-    memccpy((*output_buffer_address),input_buffer,sizeof(char),input_buffer_size);
+    memcpy((*output_buffer_address),input_buffer,input_buffer_size*sizeof(char));
     (*poutput_buffer_size) = input_buffer_size;
     return 0;
 }

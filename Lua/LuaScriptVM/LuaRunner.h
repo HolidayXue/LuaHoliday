@@ -35,7 +35,7 @@ public:
     int DoString(const std::string& pszScript);
     int DoFile(const std::string lpszFilePath);
     
-    
+    int CallLuaFunction(const std::string &function_name,const std::string input_JsonString);
 
     lua_State* GetLuaState();
     
