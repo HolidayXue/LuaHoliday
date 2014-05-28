@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CJson", "CJson\CJson.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ApiCalledByLua", "ApiCalledByLua\ApiCalledByLua.vcxproj", "{879BF344-141F-4BD5-AC06-91A5751D8CB0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boostLuaRun", "boostLuaRun\boostLuaRun.vcxproj", "{D055056C-DE1F-49AE-BFF8-3DE727EA6DBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -49,6 +51,12 @@ Global
 		{879BF344-141F-4BD5-AC06-91A5751D8CB0}.Release|Win32.ActiveCfg = Release|Win32
 		{879BF344-141F-4BD5-AC06-91A5751D8CB0}.Release|Win32.Build.0 = Release|Win32
 		{879BF344-141F-4BD5-AC06-91A5751D8CB0}.Release|Win32.Deploy.0 = Release|Win32
+		{D055056C-DE1F-49AE-BFF8-3DE727EA6DBE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D055056C-DE1F-49AE-BFF8-3DE727EA6DBE}.Debug|Win32.Build.0 = Debug|Win32
+		{D055056C-DE1F-49AE-BFF8-3DE727EA6DBE}.Debug|Win32.Deploy.0 = Debug|Win32
+		{D055056C-DE1F-49AE-BFF8-3DE727EA6DBE}.Release|Win32.ActiveCfg = Release|Win32
+		{D055056C-DE1F-49AE-BFF8-3DE727EA6DBE}.Release|Win32.Build.0 = Release|Win32
+		{D055056C-DE1F-49AE-BFF8-3DE727EA6DBE}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

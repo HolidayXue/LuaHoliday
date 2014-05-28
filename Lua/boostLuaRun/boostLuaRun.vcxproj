@@ -11,19 +11,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BECE1F84-9CB8-4006-BC18-6941F670A443}</ProjectGuid>
+    <ProjectGuid>{D055056C-DE1F-49AE-BFF8-3DE727EA6DBE}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>JsonCpp</RootNamespace>
+    <RootNamespace>boostLuaRun</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -53,11 +53,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)JsonCpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/LuaScriptVM;$(SolutionDir)/LuaObjectRegister;I:\GitHub\LuaHoliday\Lua\ApiCalledByLua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>LuaScriptVM.lib;ApiCalledByLua.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -65,42 +66,31 @@
       <WarningLevel>Level3</WarningLevel>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;JSON_DLL_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)/JsonCpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/LuaScriptVM;$(SolutionDir)/LuaObjectRegister;$(SolutionDir)/ApiCalledByLua;$(SolutionDir)/JsonCpp/Json;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ImportLibrary>$(SolutionDir)lib/$(ProjectName).lib</ImportLibrary>
+      <AdditionalDependencies>JsonCpp.lib;LuaScriptVM.lib;ApiCalledByLua.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="json\autolink.h" />
-    <ClInclude Include="json\config.h" />
-    <ClInclude Include="json\features.h" />
-    <ClInclude Include="json\forwards.h" />
-    <ClInclude Include="json\json.h" />
-    <ClInclude Include="json\reader.h" />
-    <ClInclude Include="json\value.h" />
-    <ClInclude Include="json\writer.h" />
-    <ClInclude Include="json_batchallocator.h" />
+    <ClCompile Include="EventCome.cpp" />
+    <ClCompile Include="LuaAsMessageQueue.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="json_internalarray.inl" />
-    <None Include="json_internalmap.inl" />
-    <None Include="json_valueiterator.inl" />
-    <None Include="LICENSE" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="json_reader.cpp" />
-    <ClCompile Include="json_value.cpp" />
-    <ClCompile Include="json_writer.cpp" />
+    <ClInclude Include="EventCome.h" />
+    <ClInclude Include="LuaAsMessageQueue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
