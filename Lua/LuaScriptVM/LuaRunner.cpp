@@ -55,7 +55,7 @@ int CLuaRunner::DoString( const std::string& pszScript )
 
 int CLuaRunner::InitialiseWorkEnvironment()
 {
-    lua_State* L = lua_newstate(XYF_lua_default_alloc, this); // lua_newstate °ÑCµÄ¶ÔÏó´«ÈëluaÒýÇæ
+    lua_State* L = lua_newstate(XYF_lua_default_alloc, this); // lua_newstate ï¿½ï¿½Cï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½luaï¿½ï¿½ï¿½ï¿½
 
     int return_result = -1;
     do 
@@ -147,21 +147,63 @@ void CLuaRunner::Close()
     lua_close(m_pLuaState);
 }
 
-int CLuaRunner::CallLuaFunction( const std::string &function_name,const std::string input_JsonString )
+int CLuaRunner::CallLuaFunction(const std::string &function_name, const std::string input_JsonString)
 {
-	if (NULL == m_pLuaState)
+	int return_ret = 0;
+	do
 	{
-		return 1;
-	}
-	lua_getglobal(m_pLuaState,function_name.c_str());
-	//lua_pushvfstring()
-	lua_pushstring(m_pLuaState,input_JsonString.c_str()) ;  
-	
-	int ret = lua_pcall(m_pLuaState,1,LUA_MULTRET,0) ;  
-	if ( ret != 0 )  
-		return ret;
-	//lua_pop(m_pLuaState,1);
-	return 0;
+		if (NULL == m_pLuaState)
+		{
+			return_ret = 1;
+			break;
+		}
+		std::vector<std::string> table_vector;
+		table_vector.clear();
+		std::string call_function_name = "";
+		std::string tmp_sub_string = function_name;
+		int idx = -1;
+		while ((idx = tmp_sub_string.find(".")) != tmp_sub_string.npos)
+		{
+			std::string buffer_string = tmp_sub_string;
+			std::string input_table_name = tmp_sub_string.substr(0, idx);
+			tmp_sub_string = buffer_string.substr(idx + 1);
+			table_vector.push_back(input_table_name);
+		}
+		call_function_name = tmp_sub_string;
+		size_t table_vector_size = table_vector.size();
+		if (table_vector_size > 0)
+		{
+			lua_getglobal(m_pLuaState, table_vector[0].c_str());
+			for (size_t i = 1; i < table_vector.size(); i++)
+			{
+				lua_pushstring(m_pLuaState, table_vector[i].c_str());
+				lua_gettable(m_pLuaState, -2);
+			}
+
+			lua_pushstring(m_pLuaState, call_function_name.c_str());
+			lua_gettable(m_pLuaState, -2);
+		}
+		else
+		{
+			lua_getglobal(m_pLuaState, function_name.c_str());
+		}
+
+		if (!lua_isfunction(m_pLuaState, -1))
+		{
+			return_ret = -1;
+			break;
+		}
+
+		lua_pushstring(m_pLuaState, input_JsonString.c_str());
+
+		int return_ret = lua_pcall(m_pLuaState, 1, LUA_MULTRET, 0);
+		if (return_ret != 0)
+		{
+			break;
+		}
+		return_ret = 0;
+	} while (0);
+	return return_ret;
 }
 
   
