@@ -14,7 +14,7 @@ struct lua_State;
 #define LUASCRIPTVM_API __declspec(dllimport)
 #endif
 
-// toluappÉú³É.c/.cppÎÄ¼þÖÐµÄopenº¯Êý£¬ÓÃÀ´°ó¶¨Ö¸¶¨µÄC++±äÁ¿¡¢Àà¡¢³£Á¿µÈµ½lua½âÊÍÆ÷ÖÐ
+// toluappï¿½ï¿½ï¿½ï¿½.c/.cppï¿½Ä¼ï¿½ï¿½Ðµï¿½openï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½C++ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à¡¢ï¿½ï¿½ï¿½ï¿½ï¿½Èµï¿½luaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 typedef int (*tolua_open_func)(lua_State* tolua_S);
 
 typedef int (*lua_Custom_load) (char *,int , char** ,int* );
@@ -36,12 +36,13 @@ public:
     int DoFile(const std::string lpszFilePath);
     
     int CallLuaFunction(const std::string &function_name,const std::string input_JsonString);
-
+    int CallFormatLuaFunction(const std::string &function_name, const char *fmt, ...);
+	
     lua_State* GetLuaState();
     
     void Close();
 private:
-    lua_State* m_pLuaState;
+	int CountFormatString(const char*fmt);
 
     typedef std::set<tolua_open_func> ToLuaOpenFuncArray;
     ToLuaOpenFuncArray m_toluaOpenFuncArray;
