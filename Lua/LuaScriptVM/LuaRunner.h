@@ -46,5 +46,7 @@ private:
 
     typedef std::set<tolua_open_func> ToLuaOpenFuncArray;
     ToLuaOpenFuncArray m_toluaOpenFuncArray;
+
+	lua_State* m_pLuaState;
 };
 #endif

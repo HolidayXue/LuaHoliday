@@ -1,4 +1,6 @@
 #include "LuaRunner.h"
+#include <vector>
+#include <string>
 
 extern "C" {
 #include "lua.h"
