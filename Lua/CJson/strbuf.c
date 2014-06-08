@@ -91,7 +91,7 @@ void strbuf_set_increment(strbuf_t *s, int increment)
     s->increment = increment;
 }
 
-static  void debug_stats(strbuf_t *s)
+static inline void debug_stats(strbuf_t *s)
 {
     if (s->debug) {
         fprintf(stderr, "strbuf(%lx) reallocs: %d, length: %d, size: %d\n",
@@ -207,7 +207,7 @@ void strbuf_append_fmt(strbuf_t *s, int len, const char *fmt, ...)
     strbuf_ensure_empty_length(s, len);
 
     va_start(arg, fmt);
-    fmt_len = _vsnprintf(s->buf + s->length, len, fmt, arg);
+    fmt_len = vsnprintf(s->buf + s->length, len, fmt, arg);
     va_end(arg);
 
     if (fmt_len < 0)
@@ -233,7 +233,7 @@ void strbuf_append_fmt_retry(strbuf_t *s, const char *fmt, ...)
          * trailing NULL */
         empty_len = strbuf_empty_length(s);
         /* Add 1 since there is also space to store the terminating NULL. */
-        fmt_len = _vsnprintf(s->buf + s->length, empty_len + 1, fmt, arg);
+        fmt_len = vsnprintf(s->buf + s->length, empty_len + 1, fmt, arg);
         va_end(arg);
 
         if (fmt_len <= empty_len)
@@ -246,5 +246,6 @@ void strbuf_append_fmt_retry(strbuf_t *s, const char *fmt, ...)
 
     s->length += fmt_len;
 }
+
 /* vi:ai et sw=4 ts=4:
  */

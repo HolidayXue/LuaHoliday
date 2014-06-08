@@ -525,14 +525,11 @@ BCinfo { int dp0, dp1, dplen, dsign, e0, inexact, nd, nd0, rounding, scale, uflc
 #define Kmax 7
 
 #ifdef __cplusplus
-#ifndef __fpconv_g_fmt_D__
-#define __fpconv_g_fmt_D__
-
 extern "C" double fpconv_strtod(const char *s00, char **se);
 extern "C" char *dtoa(double d, int mode, int ndigits,
 			int *decpt, int *sign, char **rve);
 #endif
-#endif
+
  struct
 Bigint {
 	struct Bigint *next;
@@ -2491,7 +2488,7 @@ fpconv_strtod
 	U aadj2, adj, rv, rv0;
 	ULong y, z;
 	BCinfo bc;
-	Bigint *bb = NULL, *bb1, *bd = NULL, *bd0, *bs = NULL, *delta = NULL;
+	Bigint *bb, *bb1, *bd, *bd0, *bs, *delta;
 #ifdef Avoid_Underflow
 	ULong Lsb, Lsb1;
 #endif
@@ -3698,7 +3695,7 @@ dtoa
 	int denorm;
 	ULong x;
 #endif
-	Bigint *b, *b1, *delta, *mlo = NULL, *mhi, *S;
+	Bigint *b, *b1, *delta, *mlo, *mhi, *S;
 	U d2, eps, u;
 	double ds;
 	char *s, *s0;

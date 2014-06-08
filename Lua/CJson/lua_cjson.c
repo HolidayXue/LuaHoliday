@@ -42,7 +42,7 @@
 #include <limits.h>
 #include <lua.h>
 #include <lauxlib.h>
-#include <ctype.h>
+
 #include "strbuf.h"
 #include "fpconv.h"
 
@@ -54,13 +54,18 @@
 #define CJSON_VERSION   "2.1.0"
 #endif
 
+#ifdef WIN32
+
+#include <ctype.h>
 #define isnan(x) _isnan(x)	
+#define inline _inline
 
 int strncasecmp(char *s1, char *s2, register int n) 
 {
 	while (--n >= 0 && toupper((unsigned char)*s1) == toupper((unsigned char)*s2++)) if (*s1++ == '/0')  return 0;
 	return(n < 0 ? 0 : toupper((unsigned char)*s1) - toupper((unsigned char)*--s2));
 }
+#endif
 /* Workaround for Solaris platforms missing isinf() */
 #if !defined(isinf) && (defined(USE_INTERNAL_ISINF) || defined(MISSING_ISINF))
 #define isinf(x) (!isnan(x) && isnan((x) - (x)))
@@ -230,7 +235,7 @@ static int json_integer_option(lua_State *l, int optindex, int *setting,
 
     if (!lua_isnil(l, optindex)) {
         value = luaL_checkinteger(l, optindex);
-        _snprintf(errmsg, sizeof(errmsg), "expected integer between %d and %d", min, max);
+        snprintf(errmsg, sizeof(errmsg), "expected integer between %d and %d", min, max);
         luaL_argcheck(l, min <= value && value <= max, 1, errmsg);
         *setting = value;
     }
@@ -1406,7 +1411,7 @@ static int lua_cjson_safe_new(lua_State *l)
     return 1;
 }
 
-__declspec(dllexport) int luaopen_cjson(lua_State *l)
+int luaopen_cjson(lua_State *l)
 {
     lua_cjson_new(l);
 

@@ -30,7 +30,6 @@
  * Increment: Allocation increments when resizing the string buffer.
  * Dynamic: True if created via strbuf_new()
  */
-#define inline __inline
 
 typedef struct {
     char *buf;
@@ -47,6 +46,12 @@ typedef struct {
 #endif
 #ifndef STRBUF_DEFAULT_INCREMENT
 #define STRBUF_DEFAULT_INCREMENT -2
+#endif
+
+#ifdef WIN32
+
+
+#define inline  __inline
 #endif
 
 /* Initialise */
